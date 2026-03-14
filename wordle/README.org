@@ -1,0 +1,16 @@
+* mitt-wordle
+Et lite Emacs-prosjekt for Wordle-eksperimenter.
+
+** Installere med straight.el
+#+BEGIN_SRC emacs-lisp
+(use-package mitt-wordle
+  :straight (mitt-wordle
+             :type git
+             :host github
+             :repo "brukernavn/wordle"
+             :files ("mitt-wordle.el" "lisp/*.el"))
+  :commands (mitt-wordle-hello))
+#+END_SRC
+
+** Bruk
+M-x mitt-wordle-hello

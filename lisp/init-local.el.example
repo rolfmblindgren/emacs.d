@@ -1,0 +1,10 @@
+;;; init-local.el.example --- local machine/private overrides -*- lexical-binding: t; -*-
+
+;; Kopier denne til `lisp/init-local.el` hvis du vil ha maskinspesifikke
+;; eller private innstillinger uten å legge dem i hovedmodulene.
+
+;; (setq gptel-model "gpt-5")
+;; (setq user-full-name "Navn")
+
+(provide 'init-local)
+;;; init-local.el.example ends here

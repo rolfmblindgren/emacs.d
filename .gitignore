@@ -1,0 +1,30 @@
+# Byte-compiled files
+*.elc
+
+# Custom UI/local settings
+/custom.el
+
+# Editor backups and autosaves
+*~
+\#*\#
+.%*
+%backup%~
+/auto-save-list/
+
+# Package managers and installed packages
+/elpa/
+/straight/
+
+# Session, cache, and state
+/.lsp-session-v1
+/.emacs.desktop.lock
+/desktop/
+/emacs-desktop
+/tramp
+/transient/
+/transient.bak.*/
+/url/
+/projects
+
+# Tree-sitter binaries and local caches
+/tree-sitter/
