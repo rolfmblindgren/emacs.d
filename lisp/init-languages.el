@@ -37,19 +37,24 @@
   :config
   (setq ess-style 'GNU
         inferior-ess-r-program
-        "/Library/Frameworks/R.framework/Versions/Current/Resources/bin/R"))
+        (or (executable-find "R")
+            "/Library/Frameworks/R.framework/Versions/Current/Resources/bin/R")))
 
 (use-package lua-mode
   :ensure t
   :config
-  (setq lua-default-application "/opt/homebrew/bin/lua"))
+  (setq lua-default-application
+        (or (executable-find "lua")
+            "/opt/homebrew/bin/lua")))
 
 (use-package python
   :ensure t
   :config
   (setq python-indent-offset 2
-        python-interpreter "/opt/homebrew/bin/python3"
-        python-shell-interpreter "/opt/homebrew/bin/python3"))
+        python-interpreter (or (executable-find "python3")
+                               "/opt/homebrew/bin/python3")
+        python-shell-interpreter (or (executable-find "python3")
+                                     "/opt/homebrew/bin/python3")))
 
 (use-package ace-window
   :ensure t)
@@ -58,7 +63,9 @@
   :ensure t
   :hook (rust-mode . cargo-minor-mode))
 
-(push "/usr/local/src/eplot/" load-path)
+(let ((eplot-dir (expand-file-name "~/src/eplot/")))
+  (when (file-directory-p eplot-dir)
+    (push eplot-dir load-path)))
 (autoload 'eplot "eplot" nil t)
 (autoload 'eplot-mode "eplot" nil t)
 (unless (assoc "\\.plt" auto-mode-alist)

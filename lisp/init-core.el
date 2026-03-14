@@ -34,7 +34,8 @@
 (setq mac-option-modifier nil)
 
 (setq treesit-extra-load-path
-      '("/Users/roffe/Library/Application Support/tree-sitter"))
+      (list (expand-file-name "Library/Application Support/tree-sitter"
+                              (getenv "HOME"))))
 
 (setq dired-use-ls-dired nil)
 

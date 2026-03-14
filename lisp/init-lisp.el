@@ -14,7 +14,8 @@
 (use-package sly
   :commands (sly sly-connect)
   :init
-  (setq inferior-lisp-program "/opt/homebrew/bin/sbcl")
+  (setq inferior-lisp-program (or (executable-find "sbcl")
+                                  "/opt/homebrew/bin/sbcl"))
   (setq sly-complete-symbol-function 'sly-flex-completions)
   :hook
   (lisp-mode . sly-editing-mode)

@@ -1,9 +1,9 @@
 ;;; mitt-wordle.el --- Simple Wordle tracker -*- lexical-binding: t; -*-
 ;;
-;; Author: Ditt Navn <epost@adresse>
+;; Author: Rolf M. Blindgren
 ;; Version: 0.1.0
 ;; Package-Requires: ((emacs "27.1"))
-;; Homepage: https://github.com/brukernavn/wordle
+;; Homepage: https://github.com/rolfmblindgren/emacs.d
 ;; Keywords: games, convenience
 ;;
 ;;; Commentary:
